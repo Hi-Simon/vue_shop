@@ -66,15 +66,15 @@ export default {
       this.$refs.loginFormRef.resetFields();
     },
     login() {
+      //通过el-form表单方法validate来 调用验证规则
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return;
-        //post请求返回是一个promise类型的数据，为简化数据，用await修饰，同时await只能修饰async类型
+        //请求返回是一个promise类型的数据，为简化数据，用await修饰，同时await只能修饰async类型
         const { data: res } = await this.$http.post("login", this.loginForm);
         if (res.meta.status !== 200) return this.$message.error("登陆失败");
         else this.$message.success("登陆成功");
         window.sessionStorage.setItem("token", res.data.token);
         this.$router.push("/home");
-        console.log(res);
       });
     }
   }
