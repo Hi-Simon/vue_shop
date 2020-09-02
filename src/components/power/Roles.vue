@@ -55,7 +55,7 @@
                   <!-- 渲染三级权限 -->
                   <el-col :span="18">
                     <el-tag
-                      v-for="(item3, i3) in item2.children"
+                      v-for="item3 in item2.children"
                       :key="item3.id"
                       type="warning"
                       :closable="true"
