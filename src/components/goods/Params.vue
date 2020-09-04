@@ -436,7 +436,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .el-row {
   margin-top: 15px;
 }
@@ -445,5 +445,8 @@ export default {
 }
 .input-new-tag {
   width: 120px !important;
+}
+.el-tag {
+  margin: 12px;
 }
 </style>
